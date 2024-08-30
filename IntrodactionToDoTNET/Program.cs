@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace IntrodactionToDoTNET
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
