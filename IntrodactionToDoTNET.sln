@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IntrodactionToDoTNET", "Int
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataTypes", "DataTypes\DataTypes.csproj", "{9812620C-5269-4C0B-82BF-0788A7D71E71}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Geometry", "Geometry\Geometry.csproj", "{5654EB87-91EF-48D4-89CB-FCC74BD2A199}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9812620C-5269-4C0B-82BF-0788A7D71E71}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9812620C-5269-4C0B-82BF-0788A7D71E71}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9812620C-5269-4C0B-82BF-0788A7D71E71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5654EB87-91EF-48D4-89CB-FCC74BD2A199}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5654EB87-91EF-48D4-89CB-FCC74BD2A199}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5654EB87-91EF-48D4-89CB-FCC74BD2A199}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5654EB87-91EF-48D4-89CB-FCC74BD2A199}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
