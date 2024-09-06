@@ -60,6 +60,31 @@ namespace DataTypes
 
             double a = 12.56;
             Console.WriteLine(a*100000);
+
+            //Single precision
+            Console.Write($"Переменная типа 'float' занимает {sizeof(float)} Байта памяти,");
+            Console.WriteLine($"и принимает значения в диапазоне: {float.MinValue}...{float.MaxValue}");
+            Console.WriteLine(delimiter1);
+            Console.Write($"Переменная типа 'Int16' занимает {sizeof(Single)}  Байта памяти,");
+            Console.WriteLine($"и принимает значения в диапазоне: {Single.MinValue}...{Single.MaxValue}");
+            Console.WriteLine();
+            Console.WriteLine(delimiter2);
+
+            Console.Write($"Переменная типа 'double' занимает {sizeof(double)} Байта памяти,");
+            Console.WriteLine($"и принимает значения в диапазоне: {double.MinValue}...{double.MaxValue}");
+            Console.WriteLine(delimiter1);
+            Console.Write($"Переменная типа 'Double' занимает {sizeof(Double)}  Байта памяти,");
+            Console.WriteLine($"и принимает значения в диапазоне: {Double.MinValue}...{Double.MaxValue}");
+            Console.WriteLine();
+            Console.WriteLine(delimiter1);
+
+            Console.WriteLine($"Переменная типа 'decimal' занимает {sizeof(decimal)} Байта памяти,");
+            Console.WriteLine($"и принимает значения в диапазоне: {decimal.MinValue}...{decimal.MaxValue}");
+            Console.WriteLine(delimiter1);
+            Console.WriteLine($"Переменная типа 'Decimal' занимает {sizeof(Decimal)}  Байта памяти,");
+            Console.WriteLine($"и принимает значения в диапазоне: {Decimal.MinValue}...{Decimal.MaxValue}");
+            Console.WriteLine();
+            Console.WriteLine(delimiter1);
         }
     }
 }

@@ -76,7 +76,7 @@ namespace Geometry
                 Console.WriteLine();
             }
             Console.WriteLine(delimiter1);
-            Console.OutputEncoding = System.Text.Encoding.UTF8;
+            Console.OutputEncoding = System.Text.Encoding.ASCII;
             for (int i = 0; i <= n; i++)
             {
                 for (int j = 0; j <= n; j++)
@@ -92,6 +92,15 @@ namespace Geometry
                 }
                 Console.WriteLine();
             }
+            for (int i = 0; i < n * n; i++)
+            {
+                for (int j = 0; j < n * n - 1; j++)
+                {
+
+                    Console.Write((i / n + j / n) % 2);
+                }
+            }
+            Console.WriteLine();
         }
     }
 }
