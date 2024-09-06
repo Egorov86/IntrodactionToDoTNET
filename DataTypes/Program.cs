@@ -108,11 +108,22 @@ namespace DataTypes
             Console.WriteLine('+'.GetType());      //
             Console.WriteLine("Hello".GetType());  //  
 #endif
+            #region MyRegion
+            //Console.WriteLine(((byte)5).GetType().Name);
+            //byte a = 2;
+            //uint b = uint.MaxValue;
+            //Console.WriteLine(a + "\t" + b);
+            //a = (byte)b; //
+            //Console.WriteLine(a + "\t" + b);
+            #endregion
 
-            //const
-            //readonly
-
-
+            int a = int.MaxValue;
+            uint b = uint.MaxValue;
+            Console.WriteLine(a + b);
+            Console.WriteLine((a + b).GetType().Name);
+            long c = long.MaxValue;
+            Console.WriteLine(b + c);
+            Console.WriteLine((b + c).GetType().Name);
         }
     }
 }
