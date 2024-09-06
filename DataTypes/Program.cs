@@ -1,4 +1,6 @@
-﻿using System;
+﻿//#define NUMERIC_TYPES
+//#define LITERALS
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -58,8 +60,9 @@ namespace DataTypes
             //Console.WriteLine(delimiter2); 
             #endregion
 
+#if NUMERIC_TYPES
             double a = 12.56;
-            Console.WriteLine(a*100000);
+            Console.WriteLine(a * 100000);
 
             //Single precision
             Console.Write($"Переменная типа 'float' занимает {sizeof(float)} Байта памяти,");
@@ -85,6 +88,31 @@ namespace DataTypes
             Console.WriteLine($"и принимает значения в диапазоне: {Decimal.MinValue}...{Decimal.MaxValue}");
             Console.WriteLine();
             Console.WriteLine(delimiter1);
+#endif
+#if LITERALS
+            Console.WriteLine(123.GetType());     //int
+            Console.WriteLine(123u.GetType());    //int
+            Console.WriteLine(123L.GetType());    //long
+            Console.WriteLine(123ul.GetType());   //long
+            Console.WriteLine(123.4.GetType());   //double
+            Console.WriteLine(123.4f.GetType());  //flout
+            Console.WriteLine(123f.GetType());    //flout
+            Console.WriteLine(123.4m.GetType());  //decimal 
+            Console.WriteLine(delimiter1);
+            Console.WriteLine(5d.GetType());       //double
+            Console.WriteLine(123.4.GetType());    //double
+            Console.WriteLine(123.4f.GetType());   //flout
+            Console.WriteLine(123f.GetType());     //flout
+            Console.WriteLine(123m.GetType());     //decimal
+            Console.WriteLine(delimiter1);
+            Console.WriteLine('+'.GetType());      //
+            Console.WriteLine("Hello".GetType());  //  
+#endif
+
+            //const
+            //readonly
+
+
         }
     }
 }
