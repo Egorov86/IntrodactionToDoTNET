@@ -117,13 +117,22 @@ namespace DataTypes
             //Console.WriteLine(a + "\t" + b);
             #endregion
 
-            int a = int.MaxValue;
-            uint b = uint.MaxValue;
-            Console.WriteLine(a + b);
-            Console.WriteLine((a + b).GetType().Name);
-            long c = long.MaxValue;
-            Console.WriteLine(b + c);
-            Console.WriteLine((b + c).GetType().Name);
+            try
+            {
+                int a = int.MaxValue;
+                uint b = uint.MaxValue;
+                Console.WriteLine(a + b);
+                Console.WriteLine((a + b).GetType().Name);
+                long c = long.MaxValue;
+                Console.WriteLine(b + c);
+                Console.WriteLine((b + c).GetType().Name);
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine(ex.Message);
+            }
+            Console.WriteLine("Buy");
         }
     }
 }
