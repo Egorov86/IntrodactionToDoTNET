@@ -81,7 +81,7 @@ namespace Geometry
             {
                 for (int j = 0; j <= n; j++)
                 {
-                    if (i == 0 && j == 0) Console.Write ((char)218);
+                    if (i == 0 && j == 0) Console.Write ("|");
                     else if (i == 0 && j == n) Console.Write ((char)191);
                     else if (i == n && j == 0) Console.Write ((char)192);
                     else if (i == n && j == n) Console.Write ((char)217);
