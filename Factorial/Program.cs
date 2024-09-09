@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Numerics;
 
 namespace Factorial
 {
@@ -15,7 +16,7 @@ namespace Factorial
             {
                 Console.Write("Введите число для вычисления факториала: ");
                 int n = Convert.ToInt32(Console.ReadLine());
-                double f = 1;
+                BigInteger f = 1;  // Длинная арифметика
                 for (int i = 1; i <= n; i++)
                 {
                     f *= i;
