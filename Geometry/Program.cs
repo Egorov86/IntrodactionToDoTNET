@@ -11,11 +11,12 @@ namespace Geometry
         static readonly string delimiter1 = "\n-------------------------------\n";
         static void Main(string[] args)
         {
-            int n = 5;
-            int h = 5;
+            Console.Write("Введите размер фигуры: ");
+            //int n = 5;
+            int n = Convert.ToInt32(Console.ReadLine());
             for (int i = 0; i < n; i++)
             {
-                for (int j = 0; j < h; j++)
+                for (int j = 0; j < n; j++)
                 {
                     Console.Write(" *");
                 }
@@ -33,7 +34,7 @@ namespace Geometry
             Console.WriteLine(delimiter1);
             for (int i = 0; i <= n; i++)
             {
-                for (int j = i; j < h; j++)
+                for (int j = i; j < n; j++)
                 {
                     Console.Write("*");
                 }
@@ -69,7 +70,7 @@ namespace Geometry
             Console.WriteLine(delimiter1);
             for (int i = 0; i < n; i++)
             {
-                for (int j = 0; j < h; j++)
+                for (int j = 0; j < n; j++)
                 {
                     Console.Write(i % 2 == j % 2 ? "+ " : "- ");
                 }
