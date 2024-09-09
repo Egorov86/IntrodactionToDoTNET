@@ -92,15 +92,6 @@ namespace Geometry
                 }
                 Console.WriteLine();
             }
-            for (int i = 0; i < n * n; i++)
-            {
-                for (int j = 0; j < n * n - 1; j++)
-                {
-
-                    Console.Write((i / n + j / n) % 2);
-                }
-            }
-            Console.WriteLine();
         }
     }
 }

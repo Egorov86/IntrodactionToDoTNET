@@ -12,8 +12,8 @@ namespace Factorial
         {
             Console.Write("Введите число для вычисления факториала: ");
             int fact_input = int.Parse(Console.ReadLine());
-            int i, factorial;
-            for (i = 1, factorial=1; i <= fact_input; i++)
+            int factorial=1;
+            for (int i = 1; i <= fact_input; i++)
             {
                 factorial = factorial * i;
             }
