@@ -10,14 +10,23 @@ namespace Factorial
     {
         static void Main(string[] args)
         {
-            Console.Write("Введите число для вычисления факториала: ");
-            int fact_input = int.Parse(Console.ReadLine());
-            int factorial=1;
-            for (int i = 1; i <= fact_input; i++)
+
+            try
             {
-                factorial = factorial * i;
+                Console.Write("Введите число для вычисления факториала: ");
+                int n = Convert.ToInt32(Console.ReadLine());
+                double f = 1;
+                for (int i = 1; i <= n; i++)
+                {
+                    f *= i;
+                    Console.WriteLine($"{i}! = {f}"); //интерполяция строк
+                }
             }
-            Console.Write("Факториал равен: "); Console.WriteLine(factorial ) ;
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+           
         }
     }
 }
