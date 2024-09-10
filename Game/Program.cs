@@ -11,14 +11,44 @@ namespace Game
     {
         static void Main(string[] args)
         {
-            ConsoleKey key;
-            do
+            Console.Write("Введите положение консоли по ординате X: ");
+            int cursorX = Convert.ToInt32(Console.ReadLine());
+            Console.Write("Введите положение консоли по ординате Y: ");
+            int cursorY = Convert.ToInt32(Console.ReadLine());
+            while (true)
             {
-                key = Console.ReadKey(true).Key;
-                //Console.WriteLine(key);
-                //ConsoleKey.
-                Console.WriteLine(key.ToString());
-            } while (key != ConsoleKey.Escape);
+                Console.Clear();                                //отчищаем консоль
+                Console.SetCursorPosition(cursorX, cursorY);      //координты курсора
+                Console.Write(Convert.ToChar("☺"));            // прорисовка курсора/рожицы
+                ConsoleKeyInfo keyInfo = Console.ReadKey(true);
+                switch (keyInfo.Key)
+                {
+                    case ConsoleKey.W:
+                        cursorY--;
+                        break;
+                    case ConsoleKey.S:
+                        cursorY++;
+                        break;
+                    case ConsoleKey.A:
+                        cursorX--;
+                        break;
+                    case ConsoleKey.D:
+                        cursorX++;
+                        break;
+                    case ConsoleKey.Escape:
+                        return;
+                }
+                #region MyRegion
+                //ConsoleKey key;
+                //do
+                //{
+                //    key = Console.ReadKey(true).Key;
+                //    //Console.WriteLine(key);
+                //    //ConsoleKey.
+                //    Console.WriteLine(key.ToString());
+                //} while (key != ConsoleKey.Escape); 
+                #endregion
+            }
         }
     }
 }
