@@ -37,8 +37,12 @@ namespace Game
                 if (cursorX > Console.BufferWidth - 1) cursorX = Console.BufferWidth - 1;
                 Console.Clear();
                 Console.SetCursorPosition(cursorX, cursorY);
-
+               
             }
+            while
+            { 
+            }
+
             //Console.Write("Введите положение консоли по ординате X: ");
             //int cursorX = Convert.ToInt32(Console.ReadLine());
             //Console.Write("Введите положение консоли по ординате Y: ");

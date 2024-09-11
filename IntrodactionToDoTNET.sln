@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Factorial", "Factorial\Fact
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Game", "Game\Game.csproj", "{B5B544E9-0F3C-4C49-B145-D2F92C53FE07}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculator", "Calculator\Calculator.csproj", "{E4C6CC6C-4803-4613-BF2F-A4745F58E12F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{B5B544E9-0F3C-4C49-B145-D2F92C53FE07}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5B544E9-0F3C-4C49-B145-D2F92C53FE07}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5B544E9-0F3C-4C49-B145-D2F92C53FE07}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E4C6CC6C-4803-4613-BF2F-A4745F58E12F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E4C6CC6C-4803-4613-BF2F-A4745F58E12F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E4C6CC6C-4803-4613-BF2F-A4745F58E12F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E4C6CC6C-4803-4613-BF2F-A4745F58E12F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
