@@ -11,6 +11,8 @@ namespace Game
     {
         static void Main(string[] args)
         {
+            
+            Console.WriteLine();
             Console.BufferWidth = Console.WindowWidth;
             Console.BufferHeight = Console.WindowHeight;
             Console.CursorVisible = false; // убрать предаток
