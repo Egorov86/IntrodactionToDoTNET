@@ -1,10 +1,15 @@
 ﻿//#define ARRAYS_1
 //#define ARRAYS_2
+#define JAGGED_ARRAYS
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+//1) Single dimensional;
+//2) Multi dimensional;
+//3) Jagged;
 
 namespace Arrays
 {
@@ -64,6 +69,24 @@ namespace Arrays
             Console.WriteLine(); 
 #endif
 
+#if JAGGED_ARRAYS
+            int[][] j_arr = new int[][]
+            {
+                new int[]{ 0, 1, 1, 2},
+                new int[]{ 3, 5, 8, 13},
+                new int[]{ 34, 55, 89, 144},
+                new int[]{ 233, 377, 610, 987},
+            };
+            for (int i = 0; i < j_arr.Length; i++)
+            {
+                for (int j = 0; j < j_arr[i].Length; j++)
+                {
+                    Console.Write(j_arr[i][j] + "\t");
+                }
+                Console.WriteLine();
+            }
+
+#endif
         }
     }
 }
