@@ -151,7 +151,6 @@ namespace Geometry
                     }
                     Console.WriteLine();
                 }
-                Console.WriteLine();
             }
 
                   // Большая шахматная доска через два for'а с побитовыми операторами
