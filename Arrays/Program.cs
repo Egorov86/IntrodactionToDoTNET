@@ -1,5 +1,5 @@
 ﻿//#define ARRAYS_1
-#define ARRAYS_2
+//#define ARRAYS_2
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +32,7 @@ namespace Arrays
             } 
 #endif
 
+#if ARRAYS_2
             //int[,] i_arr_2 = new int[3, 4];
             int[,] i_arr_2 = new int[,]
             {
@@ -58,9 +59,11 @@ namespace Arrays
 
             foreach (int i in i_arr_2)
             {
-                Console.Write(i+"\t");
+                Console.Write(i + "\t");
             }
-            Console.WriteLine();
+            Console.WriteLine(); 
+#endif
+
         }
     }
 }
