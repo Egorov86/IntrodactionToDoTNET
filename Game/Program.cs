@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.SqlServer.Server;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -12,7 +13,7 @@ namespace Game
         static void Main(string[] args)
         {
             
-            Console.WriteLine();
+            //Console.WriteLine();
             Console.BufferWidth = Console.WindowWidth;
             Console.BufferHeight = Console.WindowHeight;
             Console.CursorVisible = false; // убрать предаток
@@ -22,29 +23,34 @@ namespace Game
             Console.WriteLine($"X = {cursorX}, Y = {cursorY}");
             Console.SetCursorPosition(cursorX, cursorY);
             char symbol = (char)2;
-            Console.WriteLine(symbol);
+            Console.WriteLine(symbol);  //отображ курсор в сост покоя
             ConsoleKey key;
             do
             {
+                key = Console.ReadKey(true).Key;
+                //Console.WriteLine(key);
+                Console.WriteLine(key.ToString());
                 switch (key)
                 {
+                    case ConsoleKey.UpArrow:
                     case ConsoleKey.W: cursorY--; break;
+                    case ConsoleKey.DownArrow:
                     case ConsoleKey.S: cursorY++; break;
+                    case ConsoleKey.LeftArrow:
                     case ConsoleKey.A: cursorX -= 2; break;
+                    case ConsoleKey.RightArrow:
                     case ConsoleKey.D: cursorX += 2; break;
                 }
                 if (cursorY < 0) cursorY = 0;
                 if (cursorX < 0) cursorX = 0;
                 if (cursorY > Console.BufferHeight - 1) cursorY = Console.BufferHeight - 1;
                 if (cursorX > Console.BufferWidth - 1) cursorX = Console.BufferWidth - 1;
-                Console.Clear();
-                Console.SetCursorPosition(cursorX, cursorY);
-               
-            }
-            while
-            { 
-            }
-
+                Console.Clear();  // чистит старое изображание
+                Console.WriteLine($"X = {cursorX}, Y = {cursorY}"); //отображ координаты курсора
+                Console.SetCursorPosition(cursorX, cursorY);    //передвиг курсор
+                Console.WriteLine(symbol);      // отображает курсор после движух
+            } while (key != ConsoleKey.Escape);
+            #region MyRegion
             //Console.Write("Введите положение консоли по ординате X: ");
             //int cursorX = Convert.ToInt32(Console.ReadLine());
             //Console.Write("Введите положение консоли по ординате Y: ");
@@ -72,17 +78,16 @@ namespace Game
             //        case ConsoleKey.Escape:
             //            return;
             //    }
-                #region MyRegion
-                //ConsoleKey key;
-                //do
-                //{
-                //    key = Console.ReadKey(true).Key;
-                //    //Console.WriteLine(key);
-                //    //ConsoleKey.
-                //    Console.WriteLine(key.ToString());
-                //} while (key != ConsoleKey.Escape); 
-                #endregion
-            }
+
+            //ConsoleKey key;
+            //do
+            //{
+            //    key = Console.ReadKey(true).Key;
+            //    //Console.WriteLine(key);
+            //    //ConsoleKey.
+            //    Console.WriteLine(key.ToString());
+            //} while (key != ConsoleKey.Escape); 
+            #endregion
         }
     }
 }
