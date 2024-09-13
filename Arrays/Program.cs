@@ -1,8 +1,9 @@
 ﻿//#define ARRAYS_1
-#define ARRAYS_2
-//#define JAGGED_ARRAYS
+//#define ARRAYS_2
+#define JAGGED_ARRAYS
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 using System.Threading;
@@ -140,7 +141,7 @@ namespace Arrays
                 new int[]{ 0, 1, 1, 2},
                 new int[]{ 3, 5, 8, 13},
                 new int[]{ 34, 55, 89, 144},
-                new int[]{ 233, 377, 610, 987},
+                new int[]{ 233, 377, 610, 989},
             };
             for (int i = 0; i < j_arr.Length; i++)
             {
@@ -150,6 +151,32 @@ namespace Arrays
                 }
                 Console.WriteLine();
             }
+            double sred = 0;
+            int sum = 0;
+            int count = 0;
+            int min = j_arr[0][0];
+            int max = j_arr[0][0];
+            for (int i = 0; i < j_arr.Length; i++)
+            {
+                for (int j = 0; j < j_arr[i].Length; j++)
+                {
+                    sum +=j_arr[i][j];
+                    count++;
+                    if (j_arr[i][j] < min)
+                    {
+                        min = j_arr[i][j];
+                    }
+                    if (j_arr[i][j] > max)
+                    {
+                        max = j_arr[i][j];
+                    }
+                }
+            }
+            sred = (double)sum/count;
+            Console.WriteLine("Сумма: " + sum);
+            Console.WriteLine("Среднее арифметическое: " + sred);
+            Console.WriteLine("Минимальное: " + min);
+            Console.WriteLine("Максимальное: " + max);
 
 #endif
         }
