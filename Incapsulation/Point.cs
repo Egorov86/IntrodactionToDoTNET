@@ -8,7 +8,30 @@ namespace Incapsulation
 {
     internal class Point
     {
-        double x, y;
+        /*double x, y;
+        public double X
+        {
+            get
+            {
+                return x;
+            }
+            set
+            {
+                //if(value...)...
+                x = value; // value - открыть доступ
+            }
+        }
+        public double Y
+        {
+            get
+            {
+                return y;
+            }
+            set
+            {
+                y = value;
+            }
+        }
         public double GetX()
         {
             return x;
@@ -24,11 +47,26 @@ namespace Incapsulation
         public void SetY(double y)
         {
             this.y = y;
+        }*/
+        public double X { get; set; }
+        public double Y { get; set; }
+
+        public Point(double x = 0, double y = 10)
+        {
+            X = x;
+            Y = y;
+            Console.WriteLine($"Constructor:\t{this.GetHashCode()}");
+        }
+        ~Point()
+        {
+            Console.WriteLine($"Destructor\t{this.GetHashCode()}");
         }
 
+              //   Methods:
         public void Print()
         {
-            Console.WriteLine($"X={x}, Y={y}");
+            Console.WriteLine($"X={X}, Y={Y}");
+            //Console.WriteLine($"X={x}, Y={y}");
         }
     }
 }
