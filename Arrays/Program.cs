@@ -26,7 +26,7 @@ namespace Arrays
             int n = Convert.ToInt32(Console.ReadLine());
             int[] arr = new int[n];
             //Заполняем массив случ числами
-            Random rand = new Random();
+            Random rand = new Random(0); // 0 - seed
             for (int i = 0; i < arr.Length; i++)
             {
                 arr[i] = rand.Next(50, 100);
@@ -92,14 +92,18 @@ namespace Arrays
                 Console.WriteLine();
             }
             Console.WriteLine();
-
+            /* Cast = преобразует многомерный массив в одномерный массив
+            Console.WriteLine($"Сумма элементов массива: {i_arr_2.Cast<int>().Sum()}");
+            Console.WriteLine($"Сред-ариф элементов массива: {i_arr_2.Cast<int>().Average()}");
+            Console.WriteLine($"Минимальное массива: {i_arr_2.Cast<int>().Min()}");
+            Console.WriteLine($"Максимальное массива: {i_arr_2.Cast<int>().Max()}"); */
             /*foreach (int i in i_arr_2)
             {
                 Console.Write(i + "\t");
             }
             Console.WriteLine();*/
 
-                 //Среднее-арифметическое
+            //Среднее-арифметическое
             double sred = 0;
             int count = 0;   // колич.элементов массива
             for (int i = 0; i < i_arr_2.GetLength(0); i++) 
@@ -139,9 +143,9 @@ namespace Arrays
             int[][] j_arr = new int[][]
             {
                 new int[]{ 0, 1, 1, 2},
-                new int[]{ 3, 5, 8, 13},
-                new int[]{ 34, 55, 89, 144},
-                new int[]{ 233, 377, 610, 989},
+                new int[]{ 3, 5, 8, 13, 21},
+                new int[]{ 34, 55, 89},
+                new int[]{ 144, 233, 377, 610},
             };
             for (int i = 0; i < j_arr.Length; i++)
             {
@@ -156,6 +160,15 @@ namespace Arrays
             int count = 0;
             int min = j_arr[0][0];
             int max = j_arr[0][0];
+            /*
+            for (int i = 0; i < j_arr.Length; i++)
+            {
+                sum +=j_arr[i].Sum();
+                count +=j_arr[i].Length;
+                if (j_arr[i][j] < min) min = j_arr[i].Min();
+                if (j_arr[i][j] > max) max = j_arr[i].Max();
+            }
+             */
             for (int i = 0; i < j_arr.Length; i++)
             {
                 for (int j = 0; j < j_arr[i].Length; j++)
@@ -173,6 +186,7 @@ namespace Arrays
                 }
             }
             sred = (double)sum/count;
+            //Console.WriteLine($"Сумма элементов массива: {j_arr.Cast<int>().Sum()}"); НЕ РАБОТАЕТ
             Console.WriteLine("Сумма: " + sum);
             Console.WriteLine("Среднее арифметическое: " + sred);
             Console.WriteLine("Минимальное: " + min);
