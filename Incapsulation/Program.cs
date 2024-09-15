@@ -23,7 +23,13 @@ namespace Incapsulation
             B.Y = 8;
             B.Print();
 
-            Point C = new Point(11, 12);
+            Point C = new Point(11, 13);
+            C.Print();
+
+            double distance = B.Distance(C);
+            double static_distance = B.Distance(C);
+            Console.WriteLine($"Расстояние между точками: {distance}");
+            Console.WriteLine($"Расстояние между точками (Static): {static_distance}");
 
             //Console.SetWindowSize(200, 120);
         }

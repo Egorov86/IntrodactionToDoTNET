@@ -62,7 +62,19 @@ namespace Incapsulation
             Console.WriteLine($"Destructor\t{this.GetHashCode()}");
         }
 
-              //   Methods:
+        //   Methods:
+        public double Distance(Point other) // метод Distance
+        {
+            double dx = this.X - other.X;
+            double dy = this.Y - other.Y;
+            return Math.Round(Math.Sqrt(dx * dx + dy * dy), 3); //Math.Round округление после запятой на 3 знкака
+        }
+        public static double Static_Distance(Point a, Point b) // статический метод Distance
+        {
+            double dx = a.X - b.X;
+            double dy = a.Y - b.Y;
+            return Math.Round(Math.Sqrt(dx * dx + dy * dy), 3);
+        }
         public void Print()
         {
             Console.WriteLine($"X={X}, Y={Y}");
