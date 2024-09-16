@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Fraction
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
@@ -15,6 +15,8 @@ namespace Fraction
 
             Fraction B = new Fraction(5);
             B.Print();
+            Fraction C = new Fraction(1, 2);
+            C.Print();
         }
     }
 }

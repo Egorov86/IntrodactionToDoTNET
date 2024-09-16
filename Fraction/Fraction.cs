@@ -23,14 +23,24 @@ namespace Fraction
         ///  /////////////////////
 
         //                Constructors:
-        Fraction(int integer)
+        public Fraction()
+        {
+            Console.WriteLine($"DefConstructor:\t{GetHashCode()}");
+        }
+        public Fraction(int integer)
         {
             this.Integer = integer;
             Console.WriteLine($"1ArgConstructor:{GetHashCode()}");
         }
+        public Fraction(int numerator, int denominator)
+        {
+            this.Numerator = numerator;
+            this.Denominator = denominator;
+            Console.WriteLine($"Constructor:{GetHashCode()}");
+        }
         ~Fraction()
         {
-            Console.WriteLine($"Destructor:{GetHashCode()}");
+            Console.WriteLine($"Destructor:\t{GetHashCode()}");
         }
 
         //                 Methods:
