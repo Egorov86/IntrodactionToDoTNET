@@ -57,9 +57,38 @@ namespace Incapsulation
             Y = y;
             Console.WriteLine($"Constructor:\t{this.GetHashCode()}");
         }
+        public Point(Point other)
+        {
+            this.X = other.X;
+            this.Y = other.Y;
+            Console.WriteLine($"CopyConstructor:\t{this.GetHashCode()}");
+        }
         ~Point()
         {
             Console.WriteLine($"Destructor\t{this.GetHashCode()}");
+        }
+
+        //   Opertor:
+        public static Point operator+(Point left, Point right)
+        {
+            Point res = new Point();
+            res.X = left.X + right.X;
+            res.Y = left.Y + right.Y;
+            return res;
+        }
+        public static Point operator ++(Point obj)
+        {
+            obj.X++;
+            obj.Y++;
+            return obj;
+        }
+        public static bool operator ==(Point left, Point right)
+        {
+            return left.X == right.X && left.Y == right.Y;
+        }
+        public static bool operator !=(Point left, Point right)
+        {
+            return !(left == right);
         }
 
         //   Methods:
