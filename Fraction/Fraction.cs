@@ -43,7 +43,7 @@ namespace Fraction
             this.Integer = integer;
             this.Numerator = numerator;
             this.Denominator = denominator;
-            Console.WriteLine($"Constructor:{GetHashCode()}");
+            Console.WriteLine($"Constructor:\t{GetHashCode()}");
         }
         public Fraction(Fraction other)
         {
@@ -69,6 +69,79 @@ namespace Fraction
             return res;
 
         }
+        public static Fraction operator /(Fraction l, Fraction r)
+        {
+            Fraction left = l.Improper();
+            Fraction right = r.Improper();
+            Fraction res = new Fraction
+                (
+                left.Numerator * right.Denominator,
+                left.Denominator * right.Numerator
+                );
+            return res;
+        }
+        public static Fraction operator +(Fraction l, Fraction r)
+        {
+            Fraction left = l.Improper();
+            Fraction right = r.Improper();
+            Fraction res = new Fraction
+                (
+                left.Numerator * right.Denominator + right.Numerator * left.Denominator,
+                left.Denominator * right.Denominator
+                );
+            return res;
+            /* return new Fraction(l.Integer + r.Integer, l.Numerator + r.Numerator, l.Denominator + r.Denominator);*/
+        }
+        public static Fraction operator -(Fraction l, Fraction r)
+        {
+            Fraction left = l.Improper();
+            Fraction right = r.Improper();
+            Fraction res = new Fraction
+                (
+                left.Numerator * right.Denominator - right.Numerator * left.Denominator,
+                left.Denominator * right.Denominator
+                );
+            return res;
+        }
+        public static Fraction operator ++(Fraction l) //префиксный инкремент
+        {
+            return new Fraction(l.Integer + 1, l.Numerator + 1, l.Denominator + 1);
+        }
+        public static Fraction operator --(Fraction l) //префиксный декремент
+        {
+            return new Fraction(l.Integer - 1, l.Numerator - 1, l.Denominator - 1);
+        }
+        /*public static Fraction operator += (Fraction l, Fraction r)
+        {
+            l.Integer += r.Integer;
+            l.Numerator += r.Numerator;
+            l.Denominator += r.Denominator;
+            return l;
+            /*return new Fraction(l.Integer = l.Integer + r.Integer,
+            l.Numerator = l.Numerator + r.Numerator,
+            l.Denominator = l.Denominator + r.Denominator);*//*
+        }
+        public static Fraction operator -= (Fraction l, Fraction r)
+        {
+            l.Integer -= r.Integer;
+            l.Numerator -= r.Numerator;
+            l.Denominator -= r.Denominator;
+            /*return new Fraction(l.Integer = l.Integer - r.Integer,
+            l.Numerator = l.Numerator - r.Numerator,
+            l.Denominator = l.Denominator - r.Denominator);
+        }*/
+        /*public static bool operator ==(Fraction l, Fraction r)
+        {
+            return l.Integer == r.Integer && l.Numerator == r.Numerator && l.Denominator == r.Denominator;
+        }*/
+        public static bool operator ==(Fraction l, Fraction r) // оператор равно
+        {
+            return l.Integer == r.Integer && l.Numerator == r.Numerator && l.Denominator == r.Denominator;
+        }
+        public static bool operator !=(Fraction l, Fraction r) // оператор неравно
+        {
+            return !(l==r);
+        }
 
         //                 Methods:
         Fraction Proper()
@@ -90,9 +163,9 @@ namespace Fraction
             if (Integer != 0) Console.Write(Integer);
             if (Numerator != 0)
             {
-                Console.Write("(");
+                if(Integer !=0)Console.Write("(");
                 Console.Write($"{Numerator}/{Denominator}");
-                Console.Write(")");
+                if (Integer != 0) Console.Write(")");
             }
             else if (Integer == 0) Console.Write(0);
             Console.WriteLine();

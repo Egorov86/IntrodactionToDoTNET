@@ -32,9 +32,24 @@ namespace Fraction
             Fraction A = new Fraction(2, 3, 4);
             Fraction B = new Fraction(3, 4, 5);
             Fraction C = new Fraction(A * B);
+            Fraction D = new Fraction(A / B);
+            Fraction E = new Fraction(A + B);
+            Fraction F = new Fraction(A - B);
+            Fraction G = new Fraction(--A);
+            Fraction H = new Fraction(++A);
+            Fraction I = new Fraction(A+=B);         
+            Fraction J = new Fraction(A-=B);         
             A.Print();
             B.Print();
             C.Print();
+            D.Print();
+            E.Print();
+            F.Print();
+            G.Print();
+            H.Print();
+            I.Print();
+            J.Print();
+
         }
     }
 }
