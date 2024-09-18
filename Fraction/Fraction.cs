@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -59,26 +60,31 @@ namespace Fraction
         //                  OPERATOR
         public static Fraction operator *(Fraction l, Fraction r)
         {
-            Fraction left = l.Improper();
+            /*Fraction left = l.Improper();
             Fraction right = r.Improper();
             Fraction res = new Fraction
                 (
                 left.Numerator * right.Numerator,
                 left.Denominator * right.Denominator
                 );
-            return res;
-
+            return res;*/
+            return new Fraction
+            (
+            l.Improper().Numerator * r.Improper().Numerator,
+            l.Improper().Denominator * r.Improper().Denominator
+            ).Reduce().Proper();
         }
         public static Fraction operator /(Fraction l, Fraction r)
         {
-            Fraction left = l.Improper();
+            return l * r.Inverted();
+            /*Fraction left = l.Improper();
             Fraction right = r.Improper();
             Fraction res = new Fraction
                 (
                 left.Numerator * right.Denominator,
                 left.Denominator * right.Numerator
                 );
-            return res;
+            return res;*/
         }
         public static Fraction operator +(Fraction l, Fraction r)
         {
@@ -105,7 +111,12 @@ namespace Fraction
         }
         public static Fraction operator ++(Fraction l) //префиксный инкремент
         {
+            /*
             return new Fraction(l.Integer + 1, l.Numerator + 1, l.Denominator + 1);
+            */
+            l.Improper();
+            l++;
+            return l;
         }
         public static Fraction operator --(Fraction l) //префиксный декремент
         {
@@ -140,8 +151,22 @@ namespace Fraction
         }
         public static bool operator !=(Fraction l, Fraction r) // оператор неравно
         {
-            return !(l==r);
+            return !(l == r);
         }
+        //             Comparison operators:
+        public static bool operator >(Fraction left, Fraction right)
+        {
+            return 
+            left.Improper().Numerator*right.Improper().Denominator >
+            right.Improper().Numerator*left.Improper().Denominator;
+        }
+        public static bool operator <(Fraction left, Fraction right)
+        {
+            return
+            left.Improper().Numerator * right.Improper().Denominator <
+            right.Improper().Numerator * left.Improper().Denominator;
+        }
+
 
         //                 Methods:
         Fraction Proper()
@@ -157,6 +182,36 @@ namespace Fraction
             copy.Numerator += copy.Integer * copy.Denominator;
             copy.Integer = 0;
             return copy;
+        }
+        public Fraction Inverted()
+        {
+            Fraction inverted = new Fraction(this).Improper();
+            (inverted.Numerator, inverted.Denominator) = (inverted.Denominator, inverted.Numerator);
+            return inverted;
+        }
+        public Fraction Reduce()
+        {
+            int more, less, rest;
+            if (Numerator > Denominator)
+            {
+                more = Numerator;
+                less = Denominator;
+            }
+            else
+            {
+                less = Numerator;
+                more = Denominator;
+            }
+            do
+            {
+                rest = more % less;
+                more = less;
+                less = rest;
+            } while (rest > 0);
+            int GCD = more;   // Greatest common divisor = наиб общ делитель
+            Denominator = more;
+            Numerator = more;
+            return this;
         }
         public void Print()
         {

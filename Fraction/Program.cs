@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -38,10 +39,12 @@ namespace Fraction
             Fraction G = new Fraction(--A);
             Fraction H = new Fraction(++A);
             Fraction I = new Fraction(A+=B);         
-            Fraction J = new Fraction(A-=B);         
+            Fraction J = new Fraction(A-=B);
+            
             A.Print();
             B.Print();
             C.Print();
+            Console.WriteLine(C.Inverted());
             D.Print();
             E.Print();
             F.Print();
@@ -49,7 +52,15 @@ namespace Fraction
             H.Print();
             I.Print();
             J.Print();
-
+            A *= B;
+            A.Print();
+            A /= B;
+            A.Print();
+            for (Fraction i = new Fraction(1, 2); i < new Fraction(10); i++)
+            {
+                Console.Write(i + "\t");
+            }
+            Console.WriteLine();
         }
     }
 }
