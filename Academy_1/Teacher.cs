@@ -1,4 +1,4 @@
-﻿using Academy;
+﻿using Academy_1;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,15 +7,33 @@ using System.Threading.Tasks;
 
 namespace Academy_1
 {
-    internal class Teacher
+    class Teacher : Human
     {
-        public class Teacher : Human
+        public string Speciality { get; set; }
+        public uint Experience { get; set; }
+        public Teacher
+            (
+            string lastName, string firstName, uint age,
+            string speciality, uint experience
+            ) : base(lastName, firstName, age)
         {
-            public string Speciality { get; set; }
-            public string Group { get; set; }
-            public double Rating { get; set; }
-            public uint Experience { get; set; }
-            public Teacher(Human human, string speciality)
+            Speciality = speciality;
+            Experience = experience;
+            Console.WriteLine($"TConstructor:\t{GetHashCode()}");
+        }
+        public Teacher(Human human, string speciality, uint experience) : base(human)
+        {
+            Speciality = speciality;
+            Experience = experience;
+            Console.WriteLine($"TConstructor:\t{GetHashCode()}");
+        }
+        ~Teacher()
+        {
+            Console.WriteLine($"TDestructor:\t{GetHashCode()}");
+        }
+        public override string ToString()
+        {
+            return base.ToString() + $" {Speciality} {Experience}";
         }
     }
 }

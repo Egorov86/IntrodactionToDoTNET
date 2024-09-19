@@ -6,34 +6,32 @@ using System.Threading.Tasks;
 
 namespace Academy_1
 {
-    internal class Human
+    class Human
     {
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public uint Age { get; set; }
-
         public Human(string lastName, string firstName, uint age)
         {
             LastName = lastName;
             FirstName = firstName;
             Age = age;
-            Console.WriteLine($"HConstructor:\t{GetHashCode()})");
+            Console.WriteLine($"HConstructor:\t{GetHashCode()}");
         }
         public Human(Human other)
         {
             this.LastName = other.LastName;
             this.FirstName = other.FirstName;
             this.Age = other.Age;
-            Console.WriteLine($"CopyConstructor:\t{GetHashCode()})");
+            Console.WriteLine($"HCopyConstructor:\t{GetHashCode()}");
         }
         ~Human()
         {
-            Console.WriteLine($"Destructor:\t{GetHashCode()})");
+            Console.WriteLine($"HDestructor:\t{GetHashCode()}");
         }
         public override string ToString()
         {
-            return base.ToString() + $": {LastName}{FirstName}{Age} y/o";
+            return base.ToString() + $": {LastName} {FirstName} {Age} y/o";
         }
     }
 }
-
