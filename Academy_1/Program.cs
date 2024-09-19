@@ -1,4 +1,5 @@
 ﻿//#define INHERITANCE_1
+#define INHERITANCE_2
 using Academy_1;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,7 @@ namespace Academy_1
 			Console.WriteLine(teacher); 
 #endif
 
+#if INHERITANCE_2
             Human tommy = new Human("Vercetty", "Tommy", 30);
             Console.WriteLine(tommy);
 
@@ -42,7 +44,18 @@ namespace Academy_1
             Console.WriteLine(student_gaz);
 
             Graduate graduate = new Graduate(student_gaz, "Red", 2020);
-            Console.WriteLine(graduate);
+            Console.WriteLine(graduate); 
+#endif
+            Human[] group = new Human[]
+            {
+                new Student(tommy, "Theft", "Vice", 90, 80),
+                new Teacher("Diaz", "Ricardo", 50, "Weapons distribution", 20),
+                new Graduate(student_gaz, "Blue", 2020)
+            };
+            for (int i = 0; i < 3; i++)
+            {
+                Console.WriteLine(group[i]);
+            }
         }
     }
 
