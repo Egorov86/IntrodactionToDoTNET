@@ -1,11 +1,14 @@
 ﻿//#define INHERITANCE_1
 #define INHERITANCE_2
+
 using Academy_1;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO; //пространство имен SysteInputOut
+using System.Diagnostics; //пространство имен для чтения файла
 
 namespace Academy_1
 {
@@ -48,14 +51,26 @@ namespace Academy_1
 #endif
             Human[] group = new Human[]
             {
-                new Student(tommy, "Theft", "Vice", 90, 80),
-                new Teacher("Diaz", "Ricardo", 50, "Weapons distribution", 20),
-                new Graduate(student_gaz, "Blue", 2020)
+                new Student(tommy, "Theft", "Vice", 44, 55),
+                new Teacher("Diaz", "Ricardo", 40, "Gangster", 18),
+                new Graduate(student_gaz, "Blue", 2023)
             };
+            StreamWriter sw = new StreamWriter("File.txt");   // запись в файл
             for (int i = 0; i < 3; i++)
             {
-                Console.WriteLine(group[i]);
+                sw.WriteLine(group[i]);
             }
+            sw.Close();                                      // закрытие потока
+            Process.Start("notepad", "File.txt");            // открытие файла 
+
+            StreamReader sr = new StreamReader("File.txt"); // чтение из файла
+            while (!sr.EndOfStream)
+            {
+                string buffer = sr.ReadLine();
+                Console.WriteLine(buffer);
+            }
+            sr.Close();                                     // закрытие потока
+
         }
     }
 
