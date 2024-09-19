@@ -41,7 +41,7 @@ namespace Academy_1
             Student student_gaz = new Student(gaz, "Theft", "Vice", 95, 98);
             Console.WriteLine(student_gaz);
 
-            Graduate graduate = new Graduate(student_gaz, "Theft", "Vice", 95, 98);
+            Graduate graduate = new Graduate(student_gaz, "Red", 2020);
             Console.WriteLine(graduate);
         }
     }
