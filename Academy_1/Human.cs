@@ -8,6 +8,10 @@ namespace Academy_1
 {
     class Human
     {
+        static readonly int TUPE_WIDTH = 10;
+        static readonly int LAST_NAME_WIDTH = 10;
+        static readonly int FIRST_NAME_WIDTH = 10;
+        static readonly int AGE_WIDTH = 3;
         public string LastName { get; set; }
         public string FirstName { get; set; }
         public uint Age { get; set; }
@@ -31,7 +35,9 @@ namespace Academy_1
         }
         public override string ToString()
         {
-            return base.ToString() + $": {LastName} {FirstName} {Age} y/o";
+            return (base.ToString().Split(' ') +":").PadRight(TUPE_WIDTH) + 
+                $"{LastName.PadRight(LAST_NAME_WIDTH)} {FirstName.PadRight(FIRST_NAME_WIDTH)}" +
+                $" {Age.ToString().PadLeft(AGE_WIDTH)} y/o";
         }
     }
 }

@@ -56,7 +56,8 @@ namespace Academy_1
                 new Graduate(student_gaz, "Blue", 2023)
             };
             StreamWriter sw = new StreamWriter("File.txt");   // запись в файл
-            for (int i = 0; i < 3; i++)
+
+            for (int i = 0; i < group.Length; i++)
             {
                 sw.WriteLine(group[i]);
             }
