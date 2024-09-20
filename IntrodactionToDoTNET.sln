@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Academy_1", "Academy_1\Acad
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fails", "Fails\Fails.csproj", "{6ADD4F6C-93D5-4191-94A8-26DA50F5CA75}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Animal", "Animal\Animal.csproj", "{30F96AF3-DE75-4FA6-AD0F-0B38E12020A4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{6ADD4F6C-93D5-4191-94A8-26DA50F5CA75}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6ADD4F6C-93D5-4191-94A8-26DA50F5CA75}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6ADD4F6C-93D5-4191-94A8-26DA50F5CA75}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30F96AF3-DE75-4FA6-AD0F-0B38E12020A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30F96AF3-DE75-4FA6-AD0F-0B38E12020A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30F96AF3-DE75-4FA6-AD0F-0B38E12020A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30F96AF3-DE75-4FA6-AD0F-0B38E12020A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
