@@ -19,7 +19,7 @@ namespace Academy_1
         {
             Color_Diplom = color_diplom;
             Year_Of_Release = year_of_release;
-            Console.WriteLine($"SConstructor:\t{GetHashCode()}");
+            Console.WriteLine($"GConstructor:\t{GetHashCode()}");
         }
         public Graduate(Student student, string speciality, string group, double rating, double attendance) : 
         base(student.LastName, student.FirstName, student.Age, speciality, group, rating, attendance)
@@ -38,7 +38,7 @@ namespace Academy_1
 
         ~Graduate()
         {
-            Console.WriteLine($"SDestructor:\t{GetHashCode()}");
+            Console.WriteLine($"GDestructor:\t{GetHashCode()}");
         }
 
         public override string ToString()
