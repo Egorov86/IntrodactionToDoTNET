@@ -55,6 +55,10 @@ namespace Academy_1
                 new Teacher("Diaz", "Ricardo", 40, "Gangster", 18),
                 new Graduate(student_gaz, "Blue", 2023)
             };
+            foreach (Human i in group)
+            {
+                Console.WriteLine(i);
+            }
             StreamWriter sw = new StreamWriter("File.txt");   // запись в файл
 
             for (int i = 0; i < group.Length; i++)

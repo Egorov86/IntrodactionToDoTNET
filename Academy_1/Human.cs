@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -38,6 +39,10 @@ namespace Academy_1
             return (base.ToString().Split(' ') +":").PadRight(TUPE_WIDTH) + 
                 $"{LastName.PadRight(LAST_NAME_WIDTH)} {FirstName.PadRight(FIRST_NAME_WIDTH)}" +
                 $" {Age.ToString().PadLeft(AGE_WIDTH)} y/o";
+        }
+        public virtual String ToFileString() // пишем строку которую будем загонять в файл
+        {
+            return base.ToString().Split('.').Last()+$":{LastName}, {FirstName}, {Age}";
         }
     }
 }
