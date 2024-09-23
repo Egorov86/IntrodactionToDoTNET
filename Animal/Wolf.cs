@@ -4,12 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Animal
+namespace AbstractBaseClass
 {
-    abstract class Wolf:Dog
+    class Wolf : Dog
     {
-        public override void Sound();
-        Console.WriteLine()
-
+        public override void Sound()
+        {
+            Console.WriteLine("Auuuuuuu"); ;
+        }
     }
 }

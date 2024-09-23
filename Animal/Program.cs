@@ -4,14 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Animal
+namespace AbstractBaseClass
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
-            //Animal public abstract void = new Animal(); 
-            //Создать экзм абстракт класса не возможно
+            //Animal animal = new Animal();	//Создать экземпляр абстрактного класса невозможно.
             Wolf wolf = new Wolf();
             wolf.Sound();
 

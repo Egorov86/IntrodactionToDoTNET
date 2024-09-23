@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Animal
+namespace AbstractBaseClass
 {
-    abstract class Dog:Animal
+    abstract class Dog : Animal
     {
     }
 }
