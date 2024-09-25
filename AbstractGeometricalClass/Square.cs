@@ -3,19 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
-namespace AbstractGeometricalClass
+namespace AbstractGeometry
 {
-    public class Square : Shape
+    class Square : Rectangle
     {
-        private double side_Length; // длинна боковой стороны
-
-        public Square(double sideLength)
-        {
-            side_Length = sideLength;
-        }
-
-        public override double Area => side_Length * side_Length;
-        public override double Perimeter => 4 * side_Length;
+        public Square(double side, int start_x, int start_y, int line_width, Color color)
+            : base(side, side, start_x, start_y, line_width, color) { }
     }
 }

@@ -3,21 +3,61 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using System.Drawing;
 
-namespace AbstractGeometricalClass
+namespace AbstractGeometry
 {
-    public class Rectangle : Shape
+    class Rectangle : Shape, IHaveDiagonal
     {
-        private double Length; //длинна
-        private double Width;  //ширина
 
-        public Rectangle(double length, double width)
+        double width;
+        double height;
+        public double Width
         {
-            Length = length;
-            Width = width;
+            get => width;
+            set => width =
+                value < MIN_SIZE ? MIN_SIZE :
+                value > MAX_SIZE ? MAX_SIZE :
+                value;
         }
-
-        public override double Area => Length * Width;
-        public override double Perimeter => 2 * (Length + Width);
+        public double Height
+        {
+            get => height;
+            set => height =
+                value < MIN_SIZE ? MIN_SIZE :
+                value > MAX_SIZE ? MAX_SIZE :
+                value;
+        }
+        //			Constructors:
+        public Rectangle(double width, double height, int start_x, int start_y, int line_width, Color color)
+            : base(start_x, start_y, line_width, color)
+        {
+            Width = width;
+            Height = height;
+        }
+        public double GetDiagonal() => Math.Sqrt(Math.Pow(Width, 2) + Math.Pow(Height, 2));
+        public override double GetArea() => Width * Height;
+        public override double GetPerimeter() => (Width + Height) * 2;
+        public override void Draw(PaintEventArgs e)
+        {
+            //Console.WriteLine("Здесь должен быть рисунок прямоугольника");
+            Pen pen = new Pen(Color, LineWidth);
+            e.Graphics.DrawRectangle(pen, StartX, StartY, (float)Width, (float)Height);
+        }
+        public void DrawDiagonal(PaintEventArgs e)
+        {
+            Pen pen = new Pen(Color, 1);
+            e.Graphics.DrawLine(pen, StartX, StartY, StartX + (int)Width, StartY + (int)Height);
+        }
+        public override void Info(PaintEventArgs e)
+        {
+            Console.WriteLine(this.GetType() + ":");
+            Console.WriteLine($"Ширина: {Width}");
+            Console.WriteLine($"Высота: {Height}");
+            Console.WriteLine($"Диагональ: {GetDiagonal()}");
+            DrawDiagonal(e);
+            base.Info(e);
+        }
     }
 }
