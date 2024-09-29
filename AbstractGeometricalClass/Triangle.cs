@@ -38,6 +38,5 @@ namespace AbstractGeometricalClass
 
         public override double GetArea() => Math.Sqrt(3) / 4 * SideLength * SideLength;
         public override double GetPerimeter() => 3 * SideLength;
-        //public override double GetHeight() => _sideLength * Math.Sqrt(3) / 2;
     }
 }
