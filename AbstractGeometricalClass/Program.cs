@@ -1,4 +1,4 @@
-﻿#define CHECK_1
+﻿//#define CHECK_1
 //#define CHECK_2
 using System;
 using System.Collections.Generic;
@@ -55,6 +55,7 @@ namespace AbstractGeometry
         public static extern IntPtr GetConsoleWindow();
         [DllImport("kernel32.dll")]
         public static extern IntPtr GetDC(IntPtr hwnd);
+        
     }
 }
 /*
